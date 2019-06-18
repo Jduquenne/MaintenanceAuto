@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}Tesla Truck Maintenance{% endblock %}</title>
         {% block stylesheets %}
             <link rel="stylesheet"
@@ -12,18 +13,62 @@
     </head>
     <body>
         {% block body %}
-            <nav class="navbar navbar-light bg-dark">
-                <a class="navbar-brand">Navbar</a>
-                <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
+            <!--- Nav --->
+            <nav class="navbar navbar-light" style="background-color: #192940;">
+                <a class="navbar-brand" style="color: white">Tesla Garage</a>
+                <div class="btn-group dropleft">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        UserName
+                    </button>
+                    <div class="dropdown-menu">
+                        <button class="dropdown-item" type="button">Gestion Véhicules</button>
+                        <button class="dropdown-item" type="button">Gestion Opérations</button>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item" type="button">Déconnexion</button>
+                    </div>
+                </div>
             </nav>
+            <!--- Fin nav --->
+            <!-- Jumbotron --->
+            <div class="jumbotron jumbotron-fluid text-center">
+                <div class="container">
+                    <h1 class="display-4">Maintenance des Véhicules</h1>
+                    <p class="lead">Garage Tesla California</p>
+                </div>
+            </div>
+            <!-- Fin Jumbotron --->
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12" id="leftside">
+                    {% block leftcontent %}
+
+                    {% endblock %}
+                    </div>
+                    <div class="col-xl-9 col-lg-9 col-md-8 col-sm-12" id="rightside">
+                    {% block rightcontent %}
+
+                    {% endblock %}
+                    </div>
+                </div>
+            </div>
         {% endblock %}
+        <!-- Footer -->
+        <footer class="page-footer font-small" style="background-color: #192940; color: whitesmoke">
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2018 Copyright:
+                <a href="#"> Jason Duquenne PDG Tesla Corp</a>
+            </div>
+            <!-- Copyright -->
+
+        </footer>
+        <!-- Footer -->
         {% block javascripts %}
             <script src="{{ asset('https://code.jquery.com/jquery-3.3.1.min.js') }}"></script>
             <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js') }}"></script>
             <script src="{{ asset('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js') }}"></script>
+            <script src="{{ asset('script/script.js') }}"></script>
         {% endblock %}
     </body>
 </html>

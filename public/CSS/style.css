@@ -1,0 +1,9 @@
+.fakeimg {
+    height: 350px;
+    background: #aaa;
+}
+.presentation {
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    column-count: 2;
+}
