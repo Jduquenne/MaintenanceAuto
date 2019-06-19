@@ -7,3 +7,13 @@
     -moz-columns: 2;
     column-count: 2;
 }
+.dashboard{
+    -webkit-columns: 3;
+    -moz-columns: 3;
+    column-count: 3;
+}
+.listoperation{
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    column-count: 2;
+}

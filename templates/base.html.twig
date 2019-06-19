@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}Tesla Truck Maintenance{% endblock %}</title>
+        <title>{% block title %}Proterra Bus Maintenance{% endblock %}</title>
         {% block stylesheets %}
             <link rel="stylesheet"
                   href="{{ asset('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css') }}">
@@ -15,7 +15,7 @@
         {% block body %}
             <!--- Nav --->
             <nav class="navbar navbar-light" style="background-color: #192940;">
-                <a class="navbar-brand" style="color: white">Tesla Garage</a>
+                <a class="navbar-brand" style="color: white">Proterra Bus</a>
                 <div class="btn-group dropleft">
                     <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         UserName
@@ -24,16 +24,44 @@
                         <button class="dropdown-item" type="button">Gestion Véhicules</button>
                         <button class="dropdown-item" type="button">Gestion Opérations</button>
                         <div class="dropdown-divider"></div>
+                        <button class="dropdown-item" type="button" data-toggle="modal" data-target="#connexion">Connexion</button>
                         <button class="dropdown-item" type="button">Déconnexion</button>
                     </div>
                 </div>
             </nav>
             <!--- Fin nav --->
+            <div id="connexion" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Connexion</h3>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form" role="form" autocomplete="off" id="formLogin" novalidate="" method="POST">
+                                <div class="form-group">
+                                    <label for="uname1">Email</label>
+                                    <input type="email" class="form-control form-control-lg" name="uname1" id="uname1" required="">
+                                    <div class="invalid-feedback">Oops, you missed this one.</div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Mot de passe</label>
+                                    <input type="password" class="form-control form-control-lg" id="pwd1" required="" autocomplete="new-password">
+                                    <div class="invalid-feedback">Enter your password too!</div>
+                                </div>
+                                <div class="form-group py-4">
+                                    <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Connexion</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- Jumbotron --->
             <div class="jumbotron jumbotron-fluid text-center">
                 <div class="container">
                     <h1 class="display-4">Maintenance des Véhicules</h1>
-                    <p class="lead">Garage Tesla California</p>
+                    <p class="lead">Garage Proterra California</p>
                 </div>
             </div>
             <!-- Fin Jumbotron --->
