@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminGestionnairesController!{% endblock %}
+
+{% block leftcontent %}
+    <div class="card">
+        <img class="card-img-top" src="{{ asset("img/avatar.jpg") }}" alt="Card image">
+        <div class="card-body">
+            <h4 class="card-title">Administrateur</h4>
+            <p class="card-text">John Doe</p>
+            <span class="card-text">Ajoute et supprime les utilisateurs</span>
+        </div>
+    </div>
+    <hr/>
+    <h3>Menu</h3>
+    <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+            <a class="nav-link" href="/admin">Admin</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="/admin/gestionnaires">Gestionnaires</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/admin/technicien">Techniciens</a>
+        </li>
+    </ul>
+    <hr class="d-sm-none">
+{% endblock %}
+{% block rightcontent %}
+    <h1>Liste des gestionnaires</h1>
+
+    <table class="table table-dark">
+        <thead>
+        <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Prénom</th>
+            <th scope="col">Email</th>
+            <th scope="col">Modifier</th>
+            <th scope="col">Supprimer</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">Doe</th>
+            <td>John</td>
+            <td>JohnDoe@Proterra.com</td>
+            <td><a href="#" class="btn btn-light">Here</a></td>
+            <td><a href="#" class="btn btn-danger">Here</a></td>
+        </tr>
+        <tr>
+            <th scope="row">Doe</th>
+            <td>John</td>
+            <td>JohnDoe@Proterra.com</td>
+            <td><a href="#" class="btn btn-light">Here</a></td>
+            <td><a href="#" class="btn btn-danger">Here</a></td>
+        </tr>
+        <tr>
+            <th scope="row">Doe</th>
+            <td>John</td>
+            <td>JohnDoe@Proterra.com</td>
+            <td><a href="#" class="btn btn-light">Here</a></td>
+            <td><a href="#" class="btn btn-danger">Here</a></td>
+        </tr>
+        <tr>
+            <th scope="row">Doe</th>
+            <td>John</td>
+            <td>JohnDoe@Proterra.com</td>
+            <td><a href="#" class="btn btn-light">Here</a></td>
+            <td><a href="#" class="btn btn-danger">Here</a></td>
+        </tr>
+        <tr>
+            <th scope="row">Doe</th>
+            <td>John</td>
+            <td>JohnDoe@Proterra.com</td>
+            <td><a href="#" class="btn btn-light">Here</a></td>
+            <td><a href="#" class="btn btn-danger">Here</a></td>
+        </tr>
+
+        </tbody>
+    </table>
+
+{% endblock %}

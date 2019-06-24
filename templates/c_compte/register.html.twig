@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CCompteController!{% endblock %}
+
+{% block leftcontent %}
+    <div class="card">
+        <img class="card-img-top" src="{{ asset("img/avatar.jpg") }}" alt="Card image">
+        <div class="card-body">
+            <h4 class="card-title">Administrateur</h4>
+            <p class="card-text">John Doe</p>
+            <span class="card-text">Ajoute et supprime les utilisateurs</span>
+        </div>
+    </div>
+    <hr/>
+    <h3>Menu</h3>
+    <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+            <a class="nav-link active" href="/admin/account">Admin</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/admin/gestionnaires">Gestionnaires</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/admin/technicien">Techniciens</a>
+        </li>
+    </ul>
+    <hr class="d-sm-none">
+{% endblock %}
+{% block rightcontent %}
+    <h1>Création de compte</h1>
+
+    <!-- Extended default form grid -->
+    <form>
+        {{ form_start(registerform) }}
+        <!-- Grid row -->
+        <div class="form-row">
+            <!-- Default input -->
+            <div class="form-group col-md-6">
+                {{ form_row(registerform.nom) }}
+            </div>
+            <!-- Default input -->
+            <div class="form-group col-md-6">
+                {{ form_row(registerform.prenom) }}
+            </div>
+        </div>
+        <!-- Grid row -->
+
+        <!-- Grid row -->
+        <div class="form-row">
+            <!-- Default input -->
+            <div class="form-group col-md-6">
+                {{ form_row(registerform.username) }}
+            </div>
+            <!-- Default input -->
+            <div class="form-group col-md-6">
+                {{ form_row(registerform.plainPassword) }}
+            </div>
+        </div>
+        <!-- Grid row -->
+            {{ form_row(registerform.roles) }}
+        <div class="form-row">
+            <!-- Grid row -->
+            {{ form_row(registerform.submit) }}
+        </div>
+        {{ form_end(registerform) }}
+    </form>
+    <!-- Extended default form grid -->
+
+    <hr/>
+
+{% endblock %}

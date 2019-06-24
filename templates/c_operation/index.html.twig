@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello COperationController!{% endblock %}
+
+{% block leftcontent %}
+    <div class="card">
+        <img class="card-img-top" src="{{ asset("img/avatar.jpg") }}" alt="Card image">
+        <div class="card-body">
+            <h4 class="card-title">Technicien</h4>
+            <p class="card-text">John Doe</p>
+            <span class="card-text">Indique les pannes, crée/modifie les réparations</span>
+        </div>
+    </div>
+    <hr/>
+    <h3>Menu</h3>
+    <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+            <a class="nav-link active" href="/operation-creation">Créer une opération</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/dashboard-technicien">Tableau de bord</a>
+        </li>
+    </ul>
+    <hr class="d-sm-none">
+{% endblock %}
+
+{% block rightcontent %}
+    <h1>Création d'opération</h1>
+
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="listevehicule">Choisir le véhicule</label>
+                <select name="cars" class="custom-select" id="listevehicule">
+                    <option selected>Nom du véhicule</option>
+                    <option value="volvo">Proterra CATALYST BX-015-QP</option>
+                    <option value="fiat">Proterra CATALYST TP-487-BC</option>
+                    <option value="audi">Proterra CATALYST MN-379-BN</option>
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="datetime-local-input-debut" class="form-label">Date début de l'opération</label>
+                <input class="form-control" type="datetime-local" value="1993-04-21T00:45:00" id="datetime-local-input-debut">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="operation">Opération</label>
+                <input type="text" class="form-control mb-3" id="operation" placeholder="Nom de l'opération">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="datetime-local-input-end" class="form-label">Date fin de l'opération</label>
+                <input class="form-control" type="datetime-local" value="1992-09-14T13:45:00" id="datetime-local-input-end">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="comment">Description de l'opération</label>
+                <textarea class="form-control" rows="5" id="comment" placeholder="Décrivez l'opération..."></textarea>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="comment">Liste des piéces</label>
+                <textarea class="form-control" rows="5" id="comment" placeholder="Piéce(s) afféctée(s)..."></textarea>
+            </div>
+        </div>
+        <div class="form-row">
+            <!-- Grid row -->
+            <button type="submit" class="btn btn-dark">Crée l'opération</button>
+        </div>
+    </form>
+{% endblock %}

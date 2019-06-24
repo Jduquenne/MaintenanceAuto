@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AVehiculeController!{% endblock %}
+
+{% block leftcontent %}
+    <div class="card">
+        <img class="card-img-top" src="{{ asset("img/avatar.jpg") }}" alt="Card image">
+        <div class="card-body">
+            <h4 class="card-title">Gestionnaire</h4>
+            <p class="card-text">John Doe</p>
+            <span class="card-text">Ajoute et supprime des véhicules</span>
+        </div>
+    </div>
+    <hr/>
+    <h3>Menu</h3>
+    <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+            <a class="nav-link active" href="/ajout-vehicule">Ajouter un véhicule</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/dashboard-gestionnaire">Tableau de bord</a>
+        </li>
+    </ul>
+    <hr class="d-sm-none">
+{% endblock %}
+
+{% block rightcontent %}
+    <h1>Ajout de véhicule</h1>
+
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="listevehicule">Marque du véhicule</label>
+                <input type="text" class="form-control mb-3" id="operation" placeholder="Marque...">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="listevehicule">Modéle du véhicule</label>
+                <input type="text" class="form-control mb-3" id="operation" placeholder="Modéle...">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="listevehicule">Immatriculation</label>
+                <input type="text" class="form-control mb-3" id="operation" placeholder="Immatriculation...">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="datetime-local-input-end" class="form-label">Mise en circulation</label>
+                <input class="form-control" type="date" value="1992-09-14" id="date-local-input-end">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="listevehicule">Type</label>
+                <input type="text" class="form-control mb-3" id="operation" placeholder="Type...">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="listevehicule">Boîte de vitesse</label>
+                <input type="text" class="form-control mb-3" id="operation" placeholder="Boîte de vitesse...">
+            </div>
+        </div>
+        <div class="form-row">
+            <!-- Grid row -->
+            <button type="submit" class="btn btn-dark">Ajouter</button>
+        </div>
+    </form>
+{% endblock %}

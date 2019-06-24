@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Proterra Bus{% endblock %}
+
+{% block fullsize %}
+    <div class="col-12">
+
+        <div class="jumbotron text-center">
+            <h1 class="display-4">Connexion</h1>
+            <h3 class="lead">Faites votre demande de création de compte à l'administrateur</h3>
+            <hr class="my-4">
+            <h4>Si vous avez déjà un compte alors connectez vous ...</h4>
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" href="#" role="button" data-toggle="modal" data-target="#connexion">Ici</a>
+            </p>
+            <form method="POST" class="form" role="form" autocomplete="on" id="formLogin" novalidate="" action="{{ path('login') }}" >
+                <div class="form-group">
+                    <label for="_username"><b>Email</b></label>
+                    <input type="email" class="form-control form-control-lg" placeholder="Enter Email" name="_username" required>
+                    <div class="invalid-feedback">Oops, you missed this one.</div>
+                </div>
+                <div class="form-group">
+                    <label for="_password"><b>Mot de passe</b></label>
+                    <input type="password" class="form-control form-control-lg" placeholder="Mot de passe ..." name="_password" required>
+                    <div class="invalid-feedback">Enter your password too!</div>
+                </div>
+                <div class="form-group py-4">
+                    <button type="submit" class="btn btn-success btn-lg float-right">Login</button>
+                </div>
+            </form>
+            {% if error %}
+                <div class="alert alert-danger">
+                    <ul class="list-unstyled mb-0">
+                        <li><span class="initialism form-error-icon badge badge-danger">Error</span>
+                            <span class="form-error-message">{{ error.messageKey|trans(error.messageData, 'security') }}</span>
+                        </li>
+                    </ul>
+                </div>
+            {% endif %}
+        </div>
+
+        <!--
+        <div id="connexion" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Connexion</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="POST" class="form" role="form" autocomplete="on" id="formLogin" novalidate="" action="{{ path('login') }}" >
+                            <div class="form-group">
+                                <label for="_username"><b>Email</b></label>
+                                <input type="email" class="form-control form-control-lg" placeholder="Enter Email" name="_username" required>
+                                <div class="invalid-feedback">Oops, you missed this one.</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="_password"><b>Mot de passe</b></label>
+                                <input type="password" class="form-control form-control-lg" placeholder="Mot de passe ..." name="_password" required>
+                                <div class="invalid-feedback">Enter your password too!</div>
+                            </div>
+                            <div class="form-group py-4">
+                                <button type="submit" class="btn btn-success btn-lg float-right">Login</button>
+                            </div>
+                        </form>
+                        <form method="POST" class="form" role="form" autocomplete="on" id="formLogin" novalidate="" action="{{ path('login') }}" >
+                            {{ form_start(loginForm) }}
+                            <div class="form-group">
+                                {{ form_row(loginForm._username) }}
+                                <div class="invalid-feedback">Oops, you missed this one.</div>
+                            </div>
+                            <div class="form-group">
+                                {{ form_row(loginForm._password) }}
+                                <div class="invalid-feedback">Enter your password too!</div>
+                            </div>
+                            <div class="form-group py-4">
+                                {{ form_row(loginForm.submit) }}
+                            </div>
+                            {{ form_end(loginForm) }}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+    </div>
+{% endblock %}
+

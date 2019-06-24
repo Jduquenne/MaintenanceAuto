@@ -1,24 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Proterra Bus{% endblock %}
+{% block title %}Hello DashboardTController!{% endblock %}
 
 {% block leftcontent %}
-    <div class="card">
-        <img class="card-img-top" src="{{ asset("img/avatar.jpg") }}" alt="Card image">
-        <div class="card-body">
-            <h4 class="card-title">Administrateur</h4>
-            <p class="card-text">John Doe</p>
-            <span class="card-text">Ajoute et supprime les utilisateurs</span>
-        </div>
-    </div>
-    <div class="card">
-        <img class="card-img-top" src="{{ asset("img/avatar.jpg") }}" alt="Card image">
-        <div class="card-body">
-            <h4 class="card-title">Gestionnaire</h4>
-            <p class="card-text">John Doe</p>
-            <span class="card-text">Ajoute et supprime des véhicules</span>
-        </div>
-    </div>
     <div class="card">
         <img class="card-img-top" src="{{ asset("img/avatar.jpg") }}" alt="Card image">
         <div class="card-body">
@@ -31,20 +15,15 @@
     <h3>Menu</h3>
     <ul class="nav nav-pills flex-column">
         <li class="nav-item">
-            <a class="nav-link active" href="#">Admin</a>
+            <a class="nav-link" href="/operation-creation">Créer une opération</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Gestionnaires</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Techniciens</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link disabled" href="#">Véhicules</a>
+            <a class="nav-link active" href="/dashboard-technicien">Tableau de bord</a>
         </li>
     </ul>
     <hr class="d-sm-none">
 {% endblock %}
+
 {% block rightcontent %}
     <h2>DashBoard</h2>
     <p>Tout les véhicules dans le garage.</p>
@@ -67,59 +46,59 @@
             <td>Proterra</td>
             <td>CATALYST</td>
             <td>BX-015-QP</td>
-            <td><a href="#" class="btn btn-light">Here</a></td>
+            <td><a href="/vehicule/id" class="btn btn-light">Here</a></td>
             <td><button type="button" class="btn btn-light" data-toggle="modal" data-target="#myModal">
                     Here
                 </button></td>
 
-                <!-- The Modal -->
-                <div class="modal" id="myModal">
-                    <div class="modal-dialog modal-xl">
-                        <div class="modal-content">
-                            <!-- Modal Header -->
-                            <div class="modal-header">
-                                <h4 class="modal-title">Nom du véhicule <small>Immatriculation</small></h4>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <!-- The Modal -->
+            <div class="modal" id="myModal">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Nom du véhicule <small>Immatriculation</small></h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="listoperation">
+                            <div class="modal-body">
+                                <h2>Opérations en cours</h2>
+                                <dl class="row">
+                                    <dt class="col-sm-3">User Agent</dt>
+                                    <dd class="col-sm-9">An HTML user agent is any device that interprets HTML documents.</dd>
+                                    <dt class="col-sm-3 text-truncate">Client-side Scripting</dt>
+                                    <dd class="col-sm-9">Client-side scripting generally refers to the category of computer programs on the web that are executed by the user's web browser.</dd>
+                                    <dt class="col-sm-3">Document Tree</dt>
+                                    <dd class="col-sm-9">The tree of elements encoded in the source document.</dd>
+                                </dl>
                             </div>
-                            <!-- Modal body -->
-                            <div class="listoperation">
-                                <div class="modal-body">
-                                        <h2>Opérations en cours</h2>
-                                        <dl class="row">
-                                            <dt class="col-sm-3">User Agent</dt>
-                                            <dd class="col-sm-9">An HTML user agent is any device that interprets HTML documents.</dd>
-                                            <dt class="col-sm-3 text-truncate">Client-side Scripting</dt>
-                                            <dd class="col-sm-9">Client-side scripting generally refers to the category of computer programs on the web that are executed by the user's web browser.</dd>
-                                            <dt class="col-sm-3">Document Tree</dt>
-                                            <dd class="col-sm-9">The tree of elements encoded in the source document.</dd>
-                                        </dl>
-                                </div>
-                                <div class="modal-body">
-                                        <h2>Opérations effectuées</h2>
-                                        <dl class="row">
-                                            <dt class="col-sm-3">User Agent</dt>
-                                            <dd class="col-sm-9">An HTML user agent is any device that interprets HTML documents.</dd>
-                                            <dt class="col-sm-3 text-truncate">Client-side Scripting</dt>
-                                            <dd class="col-sm-9">Client-side scripting generally refers to the category of computer programs on the web that are executed by the user's web browser.</dd>
-                                            <dt class="col-sm-3">Document Tree</dt>
-                                            <dd class="col-sm-9">The tree of elements encoded in the source document.</dd>
-                                        </dl>
-                                </div>
+                            <div class="modal-body">
+                                <h2>Opérations effectuées</h2>
+                                <dl class="row">
+                                    <dt class="col-sm-3">User Agent</dt>
+                                    <dd class="col-sm-9">An HTML user agent is any device that interprets HTML documents.</dd>
+                                    <dt class="col-sm-3 text-truncate">Client-side Scripting</dt>
+                                    <dd class="col-sm-9">Client-side scripting generally refers to the category of computer programs on the web that are executed by the user's web browser.</dd>
+                                    <dt class="col-sm-3">Document Tree</dt>
+                                    <dd class="col-sm-9">The tree of elements encoded in the source document.</dd>
+                                </dl>
                             </div>
-                            <!-- Modal footer -->
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                            </div>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
+            </div>
             <td><button type="button" class="btn btn-danger align-middle">×</button></td>
         </tr>
         <tr>
             <td>Proterra</td>
             <td>CATALYST</td>
             <td>BG-487-JP</td>
-            <td><button type="button" class="btn btn-light">Here</button></td>
+            <td><a href="/vehicule/id" class="btn btn-light">Here</a></td>
             <td><button type="button" class="btn btn-light" data-toggle="modal" data-target="#myModal">
                     Here
                 </button></td>
@@ -171,7 +150,7 @@
             <td>Proterra</td>
             <td>CATALYST</td>
             <td>KY-321-EA</td>
-            <td><button type="button" class="btn btn-light">Here</button></td>
+            <td><a href="/vehicule/id" class="btn btn-light">Here</a></td>
             <td><button type="button" class="btn btn-light" data-toggle="modal" data-target="#myModal">
                     Here
                 </button></td>
@@ -223,7 +202,7 @@
             <td>Proterra</td>
             <td>CATALYST</td>
             <td>TP-487-BC</td>
-            <td><button type="button" class="btn btn-light">Here</button></td>
+            <td><a href="/vehicule/id" class="btn btn-light">Here</a></td>
             <td><button type="button" class="btn btn-light" data-toggle="modal" data-target="#myModal">
                     Here
                 </button></td>
@@ -275,7 +254,7 @@
             <td>Proterra</td>
             <td>CATALYST</td>
             <td>JA-149-DU</td>
-            <td><button type="button" class="btn btn-light">Here</button></td>
+            <td><a href="/vehicule/id" class="btn btn-light">Here</a></td>
             <td><button type="button" class="btn btn-light" data-toggle="modal" data-target="#myModal">
                     Here
                 </button></td>
@@ -327,7 +306,7 @@
             <td>Proterra</td>
             <td>CATALYST</td>
             <td>AB-807-CD</td>
-            <td><button type="button" class="btn btn-light">Here</button></td>
+            <td><a href="/vehicule/id" class="btn btn-light">Here</a></td>
             <td><button type="button" class="btn btn-light" data-toggle="modal" data-target="#myModal">
                     Here
                 </button></td>
@@ -379,7 +358,7 @@
             <td>Proterra</td>
             <td>CATALYST</td>
             <td>MN-379-BN</td>
-            <td><button type="button" class="btn btn-light">Here</button></td>
+            <td><a href="/vehicule/id" class="btn btn-light">Here</a></td>
             <td><button type="button" class="btn btn-light" data-toggle="modal" data-target="#myModal">
                     Here
                 </button></td>
@@ -431,7 +410,7 @@
             <td>Proterra</td>
             <td>CATALYST</td>
             <td>KI-000-IK</td>
-            <td><button type="button" class="btn btn-light">Here</button></td>
+            <td><a href="/vehicule/id" class="btn btn-light">Here</a></td>
             <td><button type="button" class="btn btn-light" data-toggle="modal" data-target="#myModal">
                     Here
                 </button></td>
@@ -482,346 +461,4 @@
         </tbody>
     </table>
     <!-- Tableau de bord fin-->
-
-    <hr/>
-
-    <h2>Nom du véhicule</h2>
-    <p>Modéle - Immatriculation</p>
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
-                <img class="card-img-top" src="{{ asset("img/Bus-Electric.jpg") }}" alt="Card image">
-            </div>
-            <hr/>
-            <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 presentation">
-                <h4>Année</h4>
-                <p>2018</p>
-                <h4>Nombre de porte</h4>
-                <p>2</p>
-                <h4>Type</h4>
-                <p>Electrique</p>
-                <h4>Kilométrage compteur</h4>
-                <p>157942km</p>
-                <h4>Mise en circulation</h4>
-                <p>05/07/2018</p>
-                <h4>Nombre de places</h4>
-                <p>4</p>
-                <h4>Puissance fiscale</h4>
-                <p>12cv</p>
-                <h4>Boîte de vitesse</h4>
-                <p>Automatique</p>
-
-            </div>
-        </div>
-    </div>
-    <div class="media border p-3">
-        <img src="{{ asset("img/avatar.jpg") }}" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
-        <div class="media-body">
-            <div class="float-right">
-                <button type="submit" class="btn btn-primary">Ajouter</button>
-                <button type="submit" class="btn btn-secondary">Modifier</button>
-                <button type="submit" class="btn btn-dark">Supprimer</button>
-            </div>
-            <h4>Technicien <small><i>Début - Fin</i></small></h4>
-            <h5>Remplacement des batteries</h5>
-            <p>Diagnostic de la batterie</p>
-            <h5>Piéce(s) afféctée(s)</h5>
-            <ul class="list-group list-group-horizontal">
-                <li class="list-group-item">Batterie</li>
-            </ul>
-            <div class="float-right">
-                <button type="submit" class="btn btn-dark">Commentaire</button>
-            </div>
-        </div>
-    </div>
-    <div id="accordion">
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Technicien - John Doe
-                    </button>
-                </h5>
-            </div>
-
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header" id="headingTwo">
-                <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Technicien - John Doe
-                    </button>
-                </h5>
-            </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header" id="headingThree">
-                <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Technicien - John Doe
-                    </button>
-                </h5>
-            </div>
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-            </div>
-        </div>
-    </div>
-    <hr/>
-    <div class="media border p-3">
-        <img src="{{ asset("img/avatar.jpg") }}" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
-        <div class="media-body">
-            <div class="float-right">
-                <button type="submit" class="btn btn-primary">Ajouter</button>
-                <button type="submit" class="btn btn-secondary">Modifier</button>
-                <button type="submit" class="btn btn-dark">Supprimer</button>
-            </div>
-            <h4>Technicien <small><i>Début - Fin</i></small></h4>
-            <h5>Remplacement des batteries</h5>
-            <p>Diagnostic de la batterie</p>
-            <h5>Piéce(s) afféctée(s)</h5>
-            <ul class="list-group list-group-horizontal">
-                <li class="list-group-item">Batterie</li>
-            </ul>
-            <div class="float-right">
-                <button type="submit" class="btn btn-dark">Commentaire</button>
-            </div>
-        </div>
-
-    </div>
-    <hr/>
-    <div class="media border p-3">
-        <img src="{{ asset("img/avatar.jpg") }}" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
-        <div class="media-body">
-            <div class="float-right">
-                <button type="submit" class="btn btn-primary">Ajouter</button>
-                <button type="submit" class="btn btn-secondary">Modifier</button>
-                <button type="submit" class="btn btn-dark">Supprimer</button>
-            </div>
-            <h4>Technicien <small><i>Début - Fin</i></small></h4>
-            <h5>Remplacement des batteries</h5>
-            <p>Diagnostic de la batterie</p>
-            <h5>Piéce(s) afféctée(s)</h5>
-            <ul class="list-group list-group-horizontal">
-                <li class="list-group-item">Batterie</li>
-            </ul>
-            <div class="float-right">
-                <button type="submit" class="btn btn-dark">Commentaire</button>
-            </div>
-        </div>
-    </div>
-    <hr/>
-    <div class="media border p-3">
-        <img src="{{ asset("img/avatar.jpg") }}" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
-        <div class="media-body">
-            <div class="float-right">
-                <button type="submit" class="btn btn-primary">Ajouter</button>
-                <button type="submit" class="btn btn-secondary">Modifier</button>
-                <button type="submit" class="btn btn-dark">Supprimer</button>
-            </div>
-            <h4>Technicien <small><i>Début - Fin</i></small></h4>
-            <h5>Remplacement des batteries</h5>
-            <p>Diagnostic de la batterie</p>
-            <h5>Piéce(s) afféctée(s)</h5>
-            <ul class="list-group list-group-horizontal">
-                <li class="list-group-item">Batterie</li>
-            </ul>
-            <div class="float-right">
-                <button type="submit" class="btn btn-dark">Commentaire</button>
-            </div>
-        </div>
-    </div>
-    <hr/>
-    <div class="media border p-3">
-        <img src="{{ asset("img/avatar.jpg") }}" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
-        <div class="media-body">
-            <div class="float-right">
-                <button type="submit" class="btn btn-primary">Ajouter</button>
-                <button type="submit" class="btn btn-secondary">Modifier</button>
-                <button type="submit" class="btn btn-dark">Supprimer</button>
-            </div>
-            <h4>Technicien <small><i>Début - Fin</i></small></h4>
-            <h5>Remplacement des batteries</h5>
-            <p>Diagnostic de la batterie</p>
-            <h5>Piéce(s) afféctée(s)</h5>
-            <ul class="list-group list-group-horizontal">
-                <li class="list-group-item">Batterie</li>
-            </ul>
-            <div class="float-right">
-                <button type="submit" class="btn btn-dark">Commentaire</button>
-            </div>
-        </div>
-    </div>
-    <hr/>
-    <div class="media border p-3">
-        <img src="{{ asset("img/avatar.jpg") }}" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
-        <div class="media-body">
-            <div class="float-right">
-                <button type="submit" class="btn btn-primary">Ajouter</button>
-                <button type="submit" class="btn btn-secondary">Modifier</button>
-                <button type="submit" class="btn btn-dark">Supprimer</button>
-            </div>
-            <h4>Technicien <small><i>Début - Fin</i></small></h4>
-            <h5>Remplacement des batteries</h5>
-            <p>Diagnostic de la batterie</p>
-            <h5>Piéce(s) afféctée(s)</h5>
-            <ul class="list-group list-group-horizontal">
-                <li class="list-group-item">Batterie</li>
-            </ul>
-            <div class="float-right">
-                <button type="submit" class="btn btn-dark">Commentaire</button>
-            </div>
-        </div>
-    </div>
-
-    <hr/>
-
-    <h1>Création de compte</h1>
-
-    <!-- Extended default form grid -->
-    <form>
-        <!-- Grid row -->
-        <div class="form-row">
-            <!-- Default input -->
-            <div class="form-group col-md-6">
-                <label for="inputNom">Nom</label>
-                <input type="text" class="form-control" id="inputNom" placeholder="Nom...">
-            </div>
-            <!-- Default input -->
-            <div class="form-group col-md-6">
-                <label for="inputPrenom">Prénom</label>
-                <input type="text" class="form-control" id="inputPrenom" placeholder="Prénom...">
-            </div>
-        </div>
-        <!-- Grid row -->
-
-        <!-- Grid row -->
-        <div class="form-row">
-            <!-- Default input -->
-            <div class="form-group col-md-6">
-                <label for="inputEmail">Email</label>
-                <input type="email" class="form-control" id="inputEmail" placeholder="Adresse Email...">
-            </div>
-            <!-- Default input -->
-            <div class="form-group col-md-6">
-                <label for="inputPassword4">Mot de passe</label>
-                <input type="password" class="form-control" id="inputPassword" placeholder="Mot de passe...">
-            </div>
-        </div>
-        <!-- Grid row -->
-        <div class="custom-control custom-radio custom-control-inline">
-            <input type="radio" class="custom-control-input" id="customRadio" name="example" value="customEx">
-            <label class="custom-control-label" for="customRadio">Gestionnaire</label>
-        </div>
-        <div class="custom-control custom-radio custom-control-inline">
-            <input type="radio" class="custom-control-input" id="customRadio2" name="example" value="customEx">
-            <label class="custom-control-label" for="customRadio2">Technicien</label>
-        </div>
-        <div class="form-row">
-        <!-- Grid row -->
-        <button type="submit" class="btn btn-dark mt-3">Crée le compte</button>
-        </div>
-    </form>
-    <!-- Extended default form grid -->
-
-    <hr/>
-
-    <h1>Création d'opération</h1>
-
-    <form>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="listevehicule">Choisir le véhicule</label>
-                <select name="cars" class="custom-select" id="listevehicule">
-                    <option selected>Nom du véhicule</option>
-                    <option value="volvo">Proterra CATALYST BX-015-QP</option>
-                    <option value="fiat">Proterra CATALYST TP-487-BC</option>
-                    <option value="audi">Proterra CATALYST MN-379-BN</option>
-                </select>
-            </div>
-            <div class="form-group col-md-6">
-                <label for="datetime-local-input-debut" class="form-label">Date début de l'opération</label>
-                <input class="form-control" type="datetime-local" value="1993-04-21T00:45:00" id="datetime-local-input-debut">
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="operation">Opération</label>
-                <input type="text" class="form-control mb-3" id="operation" placeholder="Nom de l'opération">
-            </div>
-            <div class="form-group col-md-6">
-                <label for="datetime-local-input-end" class="form-label">Date fin de l'opération</label>
-                <input class="form-control" type="datetime-local" value="1992-09-14T13:45:00" id="datetime-local-input-end">
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="comment">Description de l'opération</label>
-                <textarea class="form-control" rows="5" id="comment" placeholder="Décrivez l'opération..."></textarea>
-            </div>
-            <div class="form-group col-md-6">
-                <label for="comment">Liste des piéces</label>
-                <textarea class="form-control" rows="5" id="comment" placeholder="Piéce(s) afféctée(s)..."></textarea>
-            </div>
-        </div>
-        <div class="form-row">
-            <!-- Grid row -->
-            <button type="submit" class="btn btn-dark">Crée l'opération</button>
-        </div>
-    </form>
-
-    <hr/>
-
-    <h1>Ajout de véhicule</h1>
-
-    <form>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="listevehicule">Marque du véhicule</label>
-                <input type="text" class="form-control mb-3" id="operation" placeholder="Marque...">
-            </div>
-            <div class="form-group col-md-6">
-                <label for="listevehicule">Modéle du véhicule</label>
-                <input type="text" class="form-control mb-3" id="operation" placeholder="Modéle...">
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="listevehicule">Immatriculation</label>
-                <input type="text" class="form-control mb-3" id="operation" placeholder="Immatriculation...">
-            </div>
-            <div class="form-group col-md-6">
-                <label for="datetime-local-input-end" class="form-label">Mise en circulation</label>
-                <input class="form-control" type="date" value="1992-09-14" id="date-local-input-end">
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="listevehicule">Type</label>
-                <input type="text" class="form-control mb-3" id="operation" placeholder="Type...">
-            </div>
-            <div class="form-group col-md-6">
-                <label for="listevehicule">Boîte de vitesse</label>
-                <input type="text" class="form-control mb-3" id="operation" placeholder="Boîte de vitesse...">
-            </div>
-        </div>
-        <div class="form-row">
-            <!-- Grid row -->
-            <button type="submit" class="btn btn-dark">Ajouter</button>
-        </div>
-    </form>
-
-    <hr/>
 {% endblock %}

@@ -1,0 +1,228 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FicheVehiculeController!{% endblock %}
+
+{% block leftcontent %}
+    <div class="card">
+        <img class="card-img-top" src="{{ asset("img/avatar.jpg") }}" alt="Card image">
+        <div class="card-body">
+            <h4 class="card-title">Technicien</h4>
+            <p class="card-text">John Doe</p>
+            <span class="card-text">Indique les pannes, crée/modifie les réparations</span>
+        </div>
+    </div>
+    <hr/>
+    <h3>Menu</h3>
+    <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+            <a class="nav-link" href="/operation-creation">Créer une opération</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/dashboard-technicien">Tableau de bord</a>
+        </li>
+    </ul>
+    <hr class="d-sm-none">
+{% endblock %}
+
+{% block rightcontent %}
+    <h2>Nom du véhicule</h2>
+    <p>Modéle - Immatriculation</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+                <img class="card-img-top" src="{{ asset("img/Bus-Electric.jpg") }}" alt="Card image">
+            </div>
+            <hr/>
+            <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 presentation">
+                <h4>Année</h4>
+                <p>2018</p>
+                <h4>Nombre de porte</h4>
+                <p>2</p>
+                <h4>Type</h4>
+                <p>Electrique</p>
+                <h4>Kilométrage compteur</h4>
+                <p>157942km</p>
+                <h4>Mise en circulation</h4>
+                <p>05/07/2018</p>
+                <h4>Nombre de places</h4>
+                <p>4</p>
+                <h4>Puissance fiscale</h4>
+                <p>12cv</p>
+                <h4>Boîte de vitesse</h4>
+                <p>Automatique</p>
+
+            </div>
+        </div>
+    </div>
+    <div class="media border p-3">
+        <img src="{{ asset("img/avatar.jpg") }}" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+        <div class="media-body">
+            <div class="float-right">
+                <button type="submit" class="btn btn-primary">Ajouter</button>
+                <button type="submit" class="btn btn-secondary">Modifier</button>
+                <button type="submit" class="btn btn-dark">Supprimer</button>
+            </div>
+            <h4>Technicien <small><i>Début - Fin</i></small></h4>
+            <h5>Remplacement des batteries</h5>
+            <p>Diagnostic de la batterie</p>
+            <h5>Piéce(s) afféctée(s)</h5>
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item">Batterie</li>
+            </ul>
+            <div class="float-right">
+                <button type="submit" class="btn btn-dark">Commentaire</button>
+            </div>
+        </div>
+    </div>
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Technicien - John Doe
+                    </button>
+                </h5>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Technicien - John Doe
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Technicien - John Doe
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <div class="media border p-3">
+        <img src="{{ asset("img/avatar.jpg") }}" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+        <div class="media-body">
+            <div class="float-right">
+                <button type="submit" class="btn btn-primary">Ajouter</button>
+                <button type="submit" class="btn btn-secondary">Modifier</button>
+                <button type="submit" class="btn btn-dark">Supprimer</button>
+            </div>
+            <h4>Technicien <small><i>Début - Fin</i></small></h4>
+            <h5>Remplacement des batteries</h5>
+            <p>Diagnostic de la batterie</p>
+            <h5>Piéce(s) afféctée(s)</h5>
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item">Batterie</li>
+            </ul>
+            <div class="float-right">
+                <button type="submit" class="btn btn-dark">Commentaire</button>
+            </div>
+        </div>
+
+    </div>
+    <hr/>
+    <div class="media border p-3">
+        <img src="{{ asset("img/avatar.jpg") }}" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+        <div class="media-body">
+            <div class="float-right">
+                <button type="submit" class="btn btn-primary">Ajouter</button>
+                <button type="submit" class="btn btn-secondary">Modifier</button>
+                <button type="submit" class="btn btn-dark">Supprimer</button>
+            </div>
+            <h4>Technicien <small><i>Début - Fin</i></small></h4>
+            <h5>Remplacement des batteries</h5>
+            <p>Diagnostic de la batterie</p>
+            <h5>Piéce(s) afféctée(s)</h5>
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item">Batterie</li>
+            </ul>
+            <div class="float-right">
+                <button type="submit" class="btn btn-dark">Commentaire</button>
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <div class="media border p-3">
+        <img src="{{ asset("img/avatar.jpg") }}" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+        <div class="media-body">
+            <div class="float-right">
+                <button type="submit" class="btn btn-primary">Ajouter</button>
+                <button type="submit" class="btn btn-secondary">Modifier</button>
+                <button type="submit" class="btn btn-dark">Supprimer</button>
+            </div>
+            <h4>Technicien <small><i>Début - Fin</i></small></h4>
+            <h5>Remplacement des batteries</h5>
+            <p>Diagnostic de la batterie</p>
+            <h5>Piéce(s) afféctée(s)</h5>
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item">Batterie</li>
+            </ul>
+            <div class="float-right">
+                <button type="submit" class="btn btn-dark">Commentaire</button>
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <div class="media border p-3">
+        <img src="{{ asset("img/avatar.jpg") }}" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+        <div class="media-body">
+            <div class="float-right">
+                <button type="submit" class="btn btn-primary">Ajouter</button>
+                <button type="submit" class="btn btn-secondary">Modifier</button>
+                <button type="submit" class="btn btn-dark">Supprimer</button>
+            </div>
+            <h4>Technicien <small><i>Début - Fin</i></small></h4>
+            <h5>Remplacement des batteries</h5>
+            <p>Diagnostic de la batterie</p>
+            <h5>Piéce(s) afféctée(s)</h5>
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item">Batterie</li>
+            </ul>
+            <div class="float-right">
+                <button type="submit" class="btn btn-dark">Commentaire</button>
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <div class="media border p-3">
+        <img src="{{ asset("img/avatar.jpg") }}" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+        <div class="media-body">
+            <div class="float-right">
+                <button type="submit" class="btn btn-primary">Ajouter</button>
+                <button type="submit" class="btn btn-secondary">Modifier</button>
+                <button type="submit" class="btn btn-dark">Supprimer</button>
+            </div>
+            <h4>Technicien <small><i>Début - Fin</i></small></h4>
+            <h5>Remplacement des batteries</h5>
+            <p>Diagnostic de la batterie</p>
+            <h5>Piéce(s) afféctée(s)</h5>
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item">Batterie</li>
+            </ul>
+            <div class="float-right">
+                <button type="submit" class="btn btn-dark">Commentaire</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}

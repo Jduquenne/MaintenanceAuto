@@ -1,0 +1,464 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Proterra Bus | Tableau de bord{% endblock %}
+
+{% block leftcontent %}
+    <div class="card">
+        <img class="card-img-top" src="{{ asset("img/avatar.jpg") }}" alt="Card image">
+        <div class="card-body">
+            <h4 class="card-title">Gestionnaire</h4>
+            <p class="card-text">John Doe</p>
+            <span class="card-text">Ajoute et supprime des véhicules</span>
+        </div>
+    </div>
+    <hr/>
+    <h3>Menu</h3>
+    <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+            <a class="nav-link " href="/ajout-vehicule">Ajouter un véhicule</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="/dashboard-gestionnaire">Tableau de bord</a>
+        </li>
+    </ul>
+    <hr class="d-sm-none">
+{% endblock %}
+
+{% block rightcontent %}
+    <h2>DashBoard</h2>
+    <p>Tout les véhicules dans le garage.</p>
+    <input class="form-control" id="myInput" type="text" placeholder="Recherche..">
+    <br>
+    <!-- Tableau de bord début-->
+    <table class="table table-dark table-striped">
+        <thead>
+        <tr>
+            <th>Marque</th>
+            <th>Modéle</th>
+            <th>Immatriculation</th>
+            <th>Fiche technique</th>
+            <th>Ajouter une opération</th>
+            <th>Supprimer le véhicule</th>
+        </tr>
+        </thead>
+        <tbody id="myTable">
+        <tr>
+            <td>Proterra</td>
+            <td>CATALYST</td>
+            <td>BX-015-QP</td>
+            <td><a href="/vehicule/id" class="btn btn-light">Here</a></td>
+            <td><button type="button" class="btn btn-light" data-toggle="modal" data-target="#myModal">
+                    Here
+                </button></td>
+
+            <!-- The Modal -->
+            <div class="modal" id="myModal">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Nom du véhicule <small>Immatriculation</small></h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="listoperation">
+                            <div class="modal-body">
+                                <h2>Opérations en cours</h2>
+                                <dl class="row">
+                                    <dt class="col-sm-3">User Agent</dt>
+                                    <dd class="col-sm-9">An HTML user agent is any device that interprets HTML documents.</dd>
+                                    <dt class="col-sm-3 text-truncate">Client-side Scripting</dt>
+                                    <dd class="col-sm-9">Client-side scripting generally refers to the category of computer programs on the web that are executed by the user's web browser.</dd>
+                                    <dt class="col-sm-3">Document Tree</dt>
+                                    <dd class="col-sm-9">The tree of elements encoded in the source document.</dd>
+                                </dl>
+                            </div>
+                            <div class="modal-body">
+                                <h2>Opérations effectuées</h2>
+                                <dl class="row">
+                                    <dt class="col-sm-3">User Agent</dt>
+                                    <dd class="col-sm-9">An HTML user agent is any device that interprets HTML documents.</dd>
+                                    <dt class="col-sm-3 text-truncate">Client-side Scripting</dt>
+                                    <dd class="col-sm-9">Client-side scripting generally refers to the category of computer programs on the web that are executed by the user's web browser.</dd>
+                                    <dt class="col-sm-3">Document Tree</dt>
+                                    <dd class="col-sm-9">The tree of elements encoded in the source document.</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <td><button type="button" class="btn btn-danger align-middle">×</button></td>
+        </tr>
+        <tr>
+            <td>Proterra</td>
+            <td>CATALYST</td>
+            <td>BG-487-JP</td>
+            <td><a href="/vehicule/id" class="btn btn-light">Here</a></td>
+            <td><button type="button" class="btn btn-light" data-toggle="modal" data-target="#myModal">
+                    Here
+                </button></td>
+
+            <!-- The Modal -->
+            <div class="modal" id="myModal">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Nom du véhicule <small>Immatriculation</small></h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="listoperation">
+                            <div class="modal-body">
+                                <h2>Opérations en cours</h2>
+                                <dl class="row">
+                                    <dt class="col-sm-3">User Agent</dt>
+                                    <dd class="col-sm-9">An HTML user agent is any device that interprets HTML documents.</dd>
+                                    <dt class="col-sm-3 text-truncate">Client-side Scripting</dt>
+                                    <dd class="col-sm-9">Client-side scripting generally refers to the category of computer programs on the web that are executed by the user's web browser.</dd>
+                                    <dt class="col-sm-3">Document Tree</dt>
+                                    <dd class="col-sm-9">The tree of elements encoded in the source document.</dd>
+                                </dl>
+                            </div>
+                            <div class="modal-body">
+                                <h2>Opérations effectuées</h2>
+                                <dl class="row">
+                                    <dt class="col-sm-3">User Agent</dt>
+                                    <dd class="col-sm-9">An HTML user agent is any device that interprets HTML documents.</dd>
+                                    <dt class="col-sm-3 text-truncate">Client-side Scripting</dt>
+                                    <dd class="col-sm-9">Client-side scripting generally refers to the category of computer programs on the web that are executed by the user's web browser.</dd>
+                                    <dt class="col-sm-3">Document Tree</dt>
+                                    <dd class="col-sm-9">The tree of elements encoded in the source document.</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <td><button type="button" class="btn btn-danger align-middle">×</button></td>
+        </tr>
+        <tr>
+            <td>Proterra</td>
+            <td>CATALYST</td>
+            <td>KY-321-EA</td>
+            <td><a href="/vehicule/id" class="btn btn-light">Here</a></td>
+            <td><button type="button" class="btn btn-light" data-toggle="modal" data-target="#myModal">
+                    Here
+                </button></td>
+
+            <!-- The Modal -->
+            <div class="modal" id="myModal">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Nom du véhicule <small>Immatriculation</small></h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="listoperation">
+                            <div class="modal-body">
+                                <h2>Opérations en cours</h2>
+                                <dl class="row">
+                                    <dt class="col-sm-3">User Agent</dt>
+                                    <dd class="col-sm-9">An HTML user agent is any device that interprets HTML documents.</dd>
+                                    <dt class="col-sm-3 text-truncate">Client-side Scripting</dt>
+                                    <dd class="col-sm-9">Client-side scripting generally refers to the category of computer programs on the web that are executed by the user's web browser.</dd>
+                                    <dt class="col-sm-3">Document Tree</dt>
+                                    <dd class="col-sm-9">The tree of elements encoded in the source document.</dd>
+                                </dl>
+                            </div>
+                            <div class="modal-body">
+                                <h2>Opérations effectuées</h2>
+                                <dl class="row">
+                                    <dt class="col-sm-3">User Agent</dt>
+                                    <dd class="col-sm-9">An HTML user agent is any device that interprets HTML documents.</dd>
+                                    <dt class="col-sm-3 text-truncate">Client-side Scripting</dt>
+                                    <dd class="col-sm-9">Client-side scripting generally refers to the category of computer programs on the web that are executed by the user's web browser.</dd>
+                                    <dt class="col-sm-3">Document Tree</dt>
+                                    <dd class="col-sm-9">The tree of elements encoded in the source document.</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <td><button type="button" class="btn btn-danger align-middle">×</button></td>
+        </tr>
+        <tr>
+            <td>Proterra</td>
+            <td>CATALYST</td>
+            <td>TP-487-BC</td>
+            <td><a href="/vehicule/id" class="btn btn-light">Here</a></td>
+            <td><button type="button" class="btn btn-light" data-toggle="modal" data-target="#myModal">
+                    Here
+                </button></td>
+
+            <!-- The Modal -->
+            <div class="modal" id="myModal">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Nom du véhicule <small>Immatriculation</small></h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="listoperation">
+                            <div class="modal-body">
+                                <h2>Opérations en cours</h2>
+                                <dl class="row">
+                                    <dt class="col-sm-3">User Agent</dt>
+                                    <dd class="col-sm-9">An HTML user agent is any device that interprets HTML documents.</dd>
+                                    <dt class="col-sm-3 text-truncate">Client-side Scripting</dt>
+                                    <dd class="col-sm-9">Client-side scripting generally refers to the category of computer programs on the web that are executed by the user's web browser.</dd>
+                                    <dt class="col-sm-3">Document Tree</dt>
+                                    <dd class="col-sm-9">The tree of elements encoded in the source document.</dd>
+                                </dl>
+                            </div>
+                            <div class="modal-body">
+                                <h2>Opérations effectuées</h2>
+                                <dl class="row">
+                                    <dt class="col-sm-3">User Agent</dt>
+                                    <dd class="col-sm-9">An HTML user agent is any device that interprets HTML documents.</dd>
+                                    <dt class="col-sm-3 text-truncate">Client-side Scripting</dt>
+                                    <dd class="col-sm-9">Client-side scripting generally refers to the category of computer programs on the web that are executed by the user's web browser.</dd>
+                                    <dt class="col-sm-3">Document Tree</dt>
+                                    <dd class="col-sm-9">The tree of elements encoded in the source document.</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <td><button type="button" class="btn btn-danger align-middle">×</button></td>
+        </tr>
+        <tr>
+            <td>Proterra</td>
+            <td>CATALYST</td>
+            <td>JA-149-DU</td>
+            <td><a href="/vehicule/id" class="btn btn-light">Here</a></td>
+            <td><button type="button" class="btn btn-light" data-toggle="modal" data-target="#myModal">
+                    Here
+                </button></td>
+
+            <!-- The Modal -->
+            <div class="modal" id="myModal">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Nom du véhicule <small>Immatriculation</small></h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="listoperation">
+                            <div class="modal-body">
+                                <h2>Opérations en cours</h2>
+                                <dl class="row">
+                                    <dt class="col-sm-3">User Agent</dt>
+                                    <dd class="col-sm-9">An HTML user agent is any device that interprets HTML documents.</dd>
+                                    <dt class="col-sm-3 text-truncate">Client-side Scripting</dt>
+                                    <dd class="col-sm-9">Client-side scripting generally refers to the category of computer programs on the web that are executed by the user's web browser.</dd>
+                                    <dt class="col-sm-3">Document Tree</dt>
+                                    <dd class="col-sm-9">The tree of elements encoded in the source document.</dd>
+                                </dl>
+                            </div>
+                            <div class="modal-body">
+                                <h2>Opérations effectuées</h2>
+                                <dl class="row">
+                                    <dt class="col-sm-3">User Agent</dt>
+                                    <dd class="col-sm-9">An HTML user agent is any device that interprets HTML documents.</dd>
+                                    <dt class="col-sm-3 text-truncate">Client-side Scripting</dt>
+                                    <dd class="col-sm-9">Client-side scripting generally refers to the category of computer programs on the web that are executed by the user's web browser.</dd>
+                                    <dt class="col-sm-3">Document Tree</dt>
+                                    <dd class="col-sm-9">The tree of elements encoded in the source document.</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <td><button type="button" class="btn btn-danger align-middle">×</button></td>
+        </tr>
+        <tr>
+            <td>Proterra</td>
+            <td>CATALYST</td>
+            <td>AB-807-CD</td>
+            <td><a href="/vehicule/id" class="btn btn-light">Here</a></td>
+            <td><button type="button" class="btn btn-light" data-toggle="modal" data-target="#myModal">
+                    Here
+                </button></td>
+
+            <!-- The Modal -->
+            <div class="modal" id="myModal">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Nom du véhicule <small>Immatriculation</small></h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="listoperation">
+                            <div class="modal-body">
+                                <h2>Opérations en cours</h2>
+                                <dl class="row">
+                                    <dt class="col-sm-3">User Agent</dt>
+                                    <dd class="col-sm-9">An HTML user agent is any device that interprets HTML documents.</dd>
+                                    <dt class="col-sm-3 text-truncate">Client-side Scripting</dt>
+                                    <dd class="col-sm-9">Client-side scripting generally refers to the category of computer programs on the web that are executed by the user's web browser.</dd>
+                                    <dt class="col-sm-3">Document Tree</dt>
+                                    <dd class="col-sm-9">The tree of elements encoded in the source document.</dd>
+                                </dl>
+                            </div>
+                            <div class="modal-body">
+                                <h2>Opérations effectuées</h2>
+                                <dl class="row">
+                                    <dt class="col-sm-3">User Agent</dt>
+                                    <dd class="col-sm-9">An HTML user agent is any device that interprets HTML documents.</dd>
+                                    <dt class="col-sm-3 text-truncate">Client-side Scripting</dt>
+                                    <dd class="col-sm-9">Client-side scripting generally refers to the category of computer programs on the web that are executed by the user's web browser.</dd>
+                                    <dt class="col-sm-3">Document Tree</dt>
+                                    <dd class="col-sm-9">The tree of elements encoded in the source document.</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <td><button type="button" class="btn btn-danger align-middle">×</button></td>
+        </tr>
+        <tr>
+            <td>Proterra</td>
+            <td>CATALYST</td>
+            <td>MN-379-BN</td>
+            <td><a href="/vehicule/id" class="btn btn-light">Here</a></td>
+            <td><button type="button" class="btn btn-light" data-toggle="modal" data-target="#myModal">
+                    Here
+                </button></td>
+
+            <!-- The Modal -->
+            <div class="modal" id="myModal">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Nom du véhicule <small>Immatriculation</small></h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="listoperation">
+                            <div class="modal-body">
+                                <h2>Opérations en cours</h2>
+                                <dl class="row">
+                                    <dt class="col-sm-3">User Agent</dt>
+                                    <dd class="col-sm-9">An HTML user agent is any device that interprets HTML documents.</dd>
+                                    <dt class="col-sm-3 text-truncate">Client-side Scripting</dt>
+                                    <dd class="col-sm-9">Client-side scripting generally refers to the category of computer programs on the web that are executed by the user's web browser.</dd>
+                                    <dt class="col-sm-3">Document Tree</dt>
+                                    <dd class="col-sm-9">The tree of elements encoded in the source document.</dd>
+                                </dl>
+                            </div>
+                            <div class="modal-body">
+                                <h2>Opérations effectuées</h2>
+                                <dl class="row">
+                                    <dt class="col-sm-3">User Agent</dt>
+                                    <dd class="col-sm-9">An HTML user agent is any device that interprets HTML documents.</dd>
+                                    <dt class="col-sm-3 text-truncate">Client-side Scripting</dt>
+                                    <dd class="col-sm-9">Client-side scripting generally refers to the category of computer programs on the web that are executed by the user's web browser.</dd>
+                                    <dt class="col-sm-3">Document Tree</dt>
+                                    <dd class="col-sm-9">The tree of elements encoded in the source document.</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <td><button type="button" class="btn btn-danger align-middle">×</button></td>
+        </tr>
+        <tr>
+            <td>Proterra</td>
+            <td>CATALYST</td>
+            <td>KI-000-IK</td>
+            <td><a href="/vehicule/id" class="btn btn-light">Here</a></td>
+            <td><button type="button" class="btn btn-light" data-toggle="modal" data-target="#myModal">
+                    Here
+                </button></td>
+
+            <!-- The Modal -->
+            <div class="modal" id="myModal">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Nom du véhicule <small>Immatriculation</small></h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="listoperation">
+                            <div class="modal-body">
+                                <h2>Opérations en cours</h2>
+                                <dl class="row">
+                                    <dt class="col-sm-3">User Agent</dt>
+                                    <dd class="col-sm-9">An HTML user agent is any device that interprets HTML documents.</dd>
+                                    <dt class="col-sm-3 text-truncate">Client-side Scripting</dt>
+                                    <dd class="col-sm-9">Client-side scripting generally refers to the category of computer programs on the web that are executed by the user's web browser.</dd>
+                                    <dt class="col-sm-3">Document Tree</dt>
+                                    <dd class="col-sm-9">The tree of elements encoded in the source document.</dd>
+                                </dl>
+                            </div>
+                            <div class="modal-body">
+                                <h2>Opérations effectuées</h2>
+                                <dl class="row">
+                                    <dt class="col-sm-3">User Agent</dt>
+                                    <dd class="col-sm-9">An HTML user agent is any device that interprets HTML documents.</dd>
+                                    <dt class="col-sm-3 text-truncate">Client-side Scripting</dt>
+                                    <dd class="col-sm-9">Client-side scripting generally refers to the category of computer programs on the web that are executed by the user's web browser.</dd>
+                                    <dt class="col-sm-3">Document Tree</dt>
+                                    <dd class="col-sm-9">The tree of elements encoded in the source document.</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <td><button type="button" class="btn btn-danger align-middle">×</button></td>
+        </tr>
+        </tbody>
+    </table>
+    <!-- Tableau de bord fin-->
+{% endblock %}
